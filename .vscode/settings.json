@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "\"editor.wordWrap\": \"on\", \"editor.rulers\": [120] "
+    ]
+}
