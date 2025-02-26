@@ -1,20 +1,48 @@
 # chmod +x ./clear_pods.sh
 # sudo chown -R $(whoami) ios
 # sudo chown -R $(whoami) .
-cd ios
 
+#!/bin/bash
+
+echo "🚀 Cleaning iOS build and CocoaPods cache..."
+
+# Navigate to iOS directory
+cd ios || exit
+
+# Remove existing Pod files
+rm -rf Pods
+rm -rf build
+rm -rf Podfile.lock
+
+# Clean CocoaPods cache
 pod cache clean --all
-
+pod deintegrate
 pod clean
 
-pod deintegrate
+echo "✅ CocoaPods cache cleaned."
 
-sudo gem install cocoapods-deintegrate cocoapods-clean
+# Reinstall CocoaPods
+echo "🚀 Installing CocoaPods dependencies..."
 
-sudo arch -x86_64 gem install ffi
+# Check system architecture
+ARCH=$(uname -m)
+if [ "$ARCH" = "arm64" ]; then
+    echo "🔹 Detected Apple Silicon (M1/M2/M3)"
+    sudo gem install cocoapods-deintegrate cocoapods-clean
+    sudo arch -arm64 gem install ffi
+    arch -arm64 pod repo update
+    arch -arm64 pod install
+else
+    echo "🔹 Detected Intel Mac (x86_64)"
+    sudo gem install cocoapods-deintegrate cocoapods-clean
+    sudo arch -x86_64 gem install ffi
+    arch -x86_64 pod repo update
+    arch -x86_64 pod install
+fi
 
-arch -x86_64 pod repo update
+echo "✅ CocoaPods installation complete!"
 
-arch -x86_64 pod install
+echo "✅ All steps completed successfully!"
+
 
 

@@ -3,6 +3,7 @@
     "jsx": "react-native",
     "target": "esnext",
     "moduleResolution": "node",
+    "types": ["./types/env.d.ts"],
     "skipLibCheck": true,
     "noEmit": true,
     "strict": true
