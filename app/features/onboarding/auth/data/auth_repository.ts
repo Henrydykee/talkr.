@@ -12,6 +12,7 @@ class AuthRepository implements IAuthRepository {
           password: login.password,
         });
         if (error) throw error;
+        console.log(data.user.id);
         return data.user
       }
     
