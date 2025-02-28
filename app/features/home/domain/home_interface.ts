@@ -1,7 +1,7 @@
-import { Talkr } from "./home";
+import { CreateTalkr, Talkr } from "./home";
 
 
 export interface IHomeRepository {
     getPost(): Promise<Array<Talkr>>;
-    createPost(talkr : Talkr): Promise<Talkr>;
+    createPost(talkr : CreateTalkr): Promise<Talkr>;
 }

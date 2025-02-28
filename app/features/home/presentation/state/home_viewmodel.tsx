@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Talkr } from "../../domain/home";
+import { CreateTalkr, Talkr } from "../../domain/home";
 import container from "../../../../core/di/container";
 
 interface HomeState {
@@ -40,9 +40,10 @@ export const getPost = createAsyncThunk<Talkr[], void, { rejectValue: string }>(
 );
 
 // Create a new post
-export const createPost = createAsyncThunk<Talkr, Talkr, { rejectValue: string }>(
+export const createPost = createAsyncThunk<Talkr, CreateTalkr, { rejectValue: string }>(
     'home/createPost',
     async (talkr, { rejectWithValue }) => {
+
         try {
             const t = await container.homerepository.createPost(talkr);
             return t;

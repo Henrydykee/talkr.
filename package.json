@@ -24,6 +24,7 @@
     "react-native-dotenv": "^3.4.11",
     "react-native-safe-area-context": "^5.2.0",
     "react-native-screens": "^4.9.1",
+    "react-native-vector-icons": "^10.2.0",
     "react-redux": "^9.2.0",
     "yup": "^1.6.1"
   },
@@ -33,7 +34,9 @@
     "@types/react": "~18.3.12",
     "@types/react-native": "^0.72.8",
     "@types/react-native-dotenv": "^0.2.2",
+    "@types/react-native-vector-icons": "^6.4.18",
     "typescript": "^5.7.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
