@@ -2,5 +2,6 @@ import { Talkr } from "./home";
 
 
 export interface IHomeRepository {
-    GetPost(): Promise<Array<Talkr>>;
+    getPost(): Promise<Array<Talkr>>;
+    createPost(talkr : Talkr): Promise<Talkr>;
 }

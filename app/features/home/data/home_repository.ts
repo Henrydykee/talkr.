@@ -6,8 +6,13 @@ import { IHomeRepository } from "../domain/home_interface";
 
 
 class HomeRepository implements IHomeRepository {
+    createPost(talkr: Talkr): Promise<Talkr> {
+      throw new Error("Method not implemented.");
+    }
 
-    async GetPost(): Promise<Talkr[]> {
+
+
+    async getPost(): Promise<Talkr[]> {
         try {
           const { data, error } = await supabase
             .from('talkr')
