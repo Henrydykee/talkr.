@@ -11,6 +11,8 @@ import MessagesScreen from "./features/messages/pages/message_screen";// Import 
 import { Ionicons } from "@expo/vector-icons";
 import SplashScreen from "./features/onboarding/spalsh_screen";
 import LoginScreen from "./features/onboarding/auth/presentation/login_screen";
+import { Provider } from "react-redux";
+import { store } from "./core/store/store";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -66,6 +68,8 @@ function MyTabs() {
 export default function App() {
   return (
     <>
+      <Provider store={store}> 
+
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Splash">
@@ -74,6 +78,9 @@ export default function App() {
           <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
+      
+      </Provider>
+
     </>
   );
 }

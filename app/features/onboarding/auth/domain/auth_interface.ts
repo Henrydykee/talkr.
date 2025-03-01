@@ -1,5 +1,5 @@
 import { User } from "@supabase/supabase-js";
-import { LoginModel } from "./auth";
+import { LoginModel, LoginResponseModel } from "./auth";
 
 
 export interface IAuthRepository {

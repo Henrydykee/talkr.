@@ -6,6 +6,8 @@ function NotificationScreen() {
     return (
         <View>
             {/* Add content here */}
+
+            
         </View>
     );
 }
