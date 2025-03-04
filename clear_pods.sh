@@ -28,6 +28,7 @@ echo "🚀 Installing CocoaPods dependencies..."
 ARCH=$(uname -m)
 if [ "$ARCH" = "arm64" ]; then
     echo "🔹 Detected Apple Silicon (M1/M2/M3)"
+    sudo chown -R $(whoami) .
     sudo gem install cocoapods-deintegrate cocoapods-clean
     sudo arch -arm64 gem install ffi
     arch -arm64 pod repo update

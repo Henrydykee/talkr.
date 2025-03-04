@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import HomeScreen from "./features/home/pages/homes_screen";
 import SearchScreen from "./features/search/pages/search_screen";
 import NotificationScreen from "./features/notification/pages/notification_screen";
 import MessagesScreen from "./features/messages/pages/message_screen";// Import SplashScreen
@@ -13,6 +12,7 @@ import SplashScreen from "./features/onboarding/spalsh_screen";
 import LoginScreen from "./features/onboarding/auth/presentation/login_screen";
 import { Provider } from "react-redux";
 import { store } from "./core/store/store";
+import HomeScreen from "./features/home/presentation/pages/homes_screen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
